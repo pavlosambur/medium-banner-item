@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+:root {
+  --background-content: #29043e;
+  --background-content-transparent: #29043ea8;
+  --background-oddsfield: #471e5a;
+  --background-primary: #130227;
+}
