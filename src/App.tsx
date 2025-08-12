@@ -3,7 +3,7 @@ import MediumBanner from "./features/MediumBanner/MediumBanner";
 
 function App() {
   return (
-    <div className="p-2">
+    <div className="flex w-full items-center justify-center p-2">
       <MediumBanner />
     </div>
   );

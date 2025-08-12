@@ -11,7 +11,10 @@ const DateStage: React.FC<DateStageProps> = ({ isCollapsed, bgColor }) => {
     <div
       className={classNames("mt-1 flex-row", isCollapsed ? "hidden" : "flex")}
     >
-      <div className={classNames("w-fit flex-none py-0.5", `bg-[${bgColor}]`)}>
+      <div
+        className={classNames("w-fit flex-none py-0.5")}
+        style={{ backgroundColor: bgColor }}
+      >
         <div className="flex pl-2">
           <span className="overflow-hidden text-[12px] font-normal tracking-[0.32px] text-ellipsis whitespace-nowrap uppercase">
             17 ago, 21:45

@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import EdgeFade from "./EdgeFade";
 import CategoryTournament from "./CategoruTournament";
 import DateStage from "./DateStage";
+import Competitor from "./Competitor";
 
 const TextContent = () => {
   const [isCollapsed, setIsCollapsed] = useState(true);
@@ -40,47 +41,38 @@ const TextContent = () => {
   };
 
   const bgColor = isCollapsed
-    ? "var(--background-content-transparent)" // "--background-content-transparent"
-    : "var(--background-content)"; // "--background-content";
+    ? "var(--background-content-transparent)"
+    : "var(--background-content)";
 
+  // const bgColor = "blue";
+  console.log("bgColor", bgColor);
   return (
-    <div className="flex flex-col select-none" onClick={toggleCollapsed}>
-      <CategoryTournament
-        ref={tournamentRef}
-        bgColor={bgColor}
-        text="Equipos nacionales. Campeonato Africano de Naciones"
-        isCollapsed={isCollapsed}
-      />
-      <DateStage isCollapsed={isCollapsed} bgColor={bgColor} />
+    <>
+      <div className="flex flex-col select-none" onClick={toggleCollapsed}>
+        <CategoryTournament
+          ref={tournamentRef}
+          bgColor={bgColor}
+          text="Equipos nacionales. Campeonato Africano de Naciones"
+          // text="Equipos nacionales"
+          isCollapsed={isCollapsed}
+        />
+        <DateStage isCollapsed={isCollapsed} bgColor={bgColor} />
 
-      <div className="mt-1 flex flex-row">
-        <div
-          className={classNames(
-            "w-fit flex-none py-0.5",
-            `bg-[${bgColor}]`,
-            isCollapsed ? "max-w-2/10" : "max-w-8/10",
-          )}
-        >
-          <div className="flex pl-2">
-            <span
-              ref={competitor1Ref}
-              className="overflow-hidden text-[12px] font-normal tracking-[0.32px] text-ellipsis whitespace-nowrap"
-            >
-              Arizona Diamondbacks
-            </span>
+        <div className="mt-1 flex flex-row">
+          <div
+            className={classNames(
+              "w-fit flex-none py-0.5",
+              isCollapsed ? "max-w-2/10" : "max-w-8/10",
+            )}
+            style={{ backgroundColor: bgColor }}
+          >
+            <Competitor text="Arizona Diamondbacks" ref={competitor1Ref} />
+            <Competitor text="San Francisco Giants" ref={competitor2Ref} />
           </div>
-          <div className="flex pl-2">
-            <span
-              ref={competitor2Ref}
-              className="overflow-hidden text-[12px] font-normal tracking-[0.32px] text-ellipsis whitespace-nowrap"
-            >
-              Saint Louis Cardinals
-            </span>
-          </div>
+          <EdgeFade bgColor={bgColor} />
         </div>
-        <EdgeFade bgColor={bgColor} />
       </div>
-    </div>
+    </>
   );
 };
 

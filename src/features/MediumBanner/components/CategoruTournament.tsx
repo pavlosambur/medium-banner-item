@@ -15,9 +15,9 @@ const CategoryTournament = forwardRef<HTMLSpanElement, CategoryTournamentProps>(
         <div
           className={classNames(
             "w-fit flex-none py-0.5",
-            `bg-[${bgColor}]`,
             isCollapsed ? "max-w-4/10" : "max-w-8/10",
           )}
+          style={{ backgroundColor: bgColor }}
         >
           <div className="flex pl-2">
             <span

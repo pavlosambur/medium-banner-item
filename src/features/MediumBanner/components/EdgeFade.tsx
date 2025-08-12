@@ -6,9 +6,10 @@ interface EdgeFadeProps {
 const EdgeFade: React.FC<EdgeFadeProps> = ({ bgColor }) => {
   return (
     <div
-      className={classNames(
-        `h-full w-[16px] bg-gradient-to-r from-[${bgColor}] to-transparent`,
-      )}
+      className={classNames(`h-full w-[16px]`)}
+      style={{
+        background: `linear-gradient(to right, ${bgColor}, transparent)`,
+      }}
     />
   );
 };
