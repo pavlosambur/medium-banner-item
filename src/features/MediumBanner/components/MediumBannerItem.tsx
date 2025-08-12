@@ -2,7 +2,9 @@ import classNames from "classnames";
 import TextContent from "./TextContent";
 import OddsField from "./OddsField";
 
-const MediumBannerItem = () => {
+interface MediumBannerItemProps {}
+
+const MediumBannerItem: React.FC<MediumBannerItemProps> = ({}) => {
   return (
     <div
       className={classNames(
@@ -14,7 +16,7 @@ const MediumBannerItem = () => {
       <div className="flex w-full flex-col justify-between">
         <div
           className={classNames(
-            "flex h-full w-full flex-col",
+            "flex h-full flex-col",
             // "bg-white"
           )}
         >

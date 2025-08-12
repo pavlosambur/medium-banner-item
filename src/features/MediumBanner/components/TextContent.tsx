@@ -6,7 +6,9 @@ import CategoryTournament from "./CategoruTournament";
 import DateStage from "./DateStage";
 import Competitor from "./Competitor";
 
-const TextContent = () => {
+interface TextContentProps {}
+
+const TextContent: React.FC<TextContentProps> = ({}) => {
   const [isCollapsed, setIsCollapsed] = useState(true);
 
   const [isTruncated, setIsTruncated] = useState(false);
@@ -49,10 +51,10 @@ const TextContent = () => {
   return (
     <>
       <div className="flex flex-col select-none" onClick={toggleCollapsed}>
+        {/* <div className="flex w-fit">text</div> */}
         <CategoryTournament
           ref={tournamentRef}
           bgColor={bgColor}
-          text="Equipos nacionales. Campeonato Africano de Naciones"
           // text="Equipos nacionales"
           isCollapsed={isCollapsed}
         />
@@ -62,7 +64,7 @@ const TextContent = () => {
           <div
             className={classNames(
               "w-fit flex-none py-0.5",
-              isCollapsed ? "max-w-2/10" : "max-w-8/10",
+              isCollapsed ? "max-w-5/20" : "max-w-8/10",
             )}
             style={{ backgroundColor: bgColor }}
           >

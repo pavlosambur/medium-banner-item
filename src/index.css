@@ -2,7 +2,11 @@
 
 :root {
   --background-content: #29043e;
+  --background-content-live: #f9488f;
+
+  --background-content-live-transparent: #f9488fa8;
   --background-content-transparent: #29043ea8;
+
   --background-oddsfield: #471e5a;
   --background-primary: #130227;
 }

@@ -1,20 +1,21 @@
 import { forwardRef } from "react";
 import classNames from "classnames";
 import EdgeFade from "./EdgeFade";
+import { useMediumBanner } from "../context/MediumBannerContext";
 
 interface CategoryTournamentProps {
   bgColor: string;
-  text: string;
   isCollapsed: boolean;
 }
 
 const CategoryTournament = forwardRef<HTMLSpanElement, CategoryTournamentProps>(
-  ({ bgColor, text, isCollapsed }, ref) => {
+  ({ bgColor, isCollapsed }, ref) => {
+    const { categoryTournamentTitle } = useMediumBanner();
     return (
-      <div className="mt-2 flex flex-row">
+      <div className="mt-2 inline-flex flex-row">
         <div
           className={classNames(
-            "w-fit flex-none py-0.5",
+            "flex-none py-0.5",
             isCollapsed ? "max-w-4/10" : "max-w-8/10",
           )}
           style={{ backgroundColor: bgColor }}
@@ -26,9 +27,9 @@ const CategoryTournament = forwardRef<HTMLSpanElement, CategoryTournamentProps>(
                 "overflow-hidden text-[12px] font-normal tracking-[0.32px] text-ellipsis",
                 isCollapsed ? "whitespace-nowrap" : "",
               )}
-              title="Equipos nacionales. Campeonato Africano de Naciones"
+              title={categoryTournamentTitle}
             >
-              {text}
+              {categoryTournamentTitle}
             </span>
           </div>
         </div>
